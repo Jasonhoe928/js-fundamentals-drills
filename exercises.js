@@ -1,3 +1,6 @@
+//Learn more about object manipulation, how to iterate through them
+//Learn how to check if something is an object
+
 /* #doubleArray
  *
  * Takes in an array of numbers and returns an array with each element doubled
@@ -21,7 +24,29 @@ var doubleArray = function(arr) {
  * @param {Array}
  * @return {Bool}
  */
-var sumArrays;
+//It should have a function that accepts 2 array arguments
+//It should sum numbers in all elements of each array
+//It should sum both arrays up
+
+//Function(array1, array2)
+    //var result = 0;
+    //for each item in array1
+      //result =  result + array1[i]
+
+    //for each item in array2
+      //result = result + array[i]
+    //return result
+
+var sumArrays = function(array1, array2) {
+  var result = 0;
+  for (var i = 0; i < array1.length; i++) {
+    result = result + array1[i];
+  }
+  for (var i = 0; i < array2.length; i++) {
+    result = result + array2[i];
+  }
+  return result;
+}
 
 /* #stringCount
  *
@@ -57,7 +82,29 @@ var countAll;
  * @param {Array}
  * @return {Array}
  */
-var countStrings;
+
+
+var countStrings = function(array) {
+  var stringLengthsArr = [];
+  for(var i = 0; i < array.length; i++) {
+    
+    var stringLength = 0;
+    for(var j = 0; j < array[i].length; j++) { 
+      stringLength++;
+    }
+
+    stringLengthsArr.push(stringLength);
+  }
+  return stringLengthsArr;
+}
+
+// var countStrings = function(array) {
+//   var stringLengthsArr = [];
+//   for(var i = 0; i < array.length; i++) {
+//     stringLengthsArr.push(array[i].length);
+//   }
+//   return stringLengthsArr;
+// }
 
 /* #countAllStrings
  *
@@ -75,7 +122,27 @@ var countAllStrings;
  * @param {Object}
  * @return {Array}
  */
-var convertToArray;
+
+//How to grab object properties and values
+
+//Accepts an object
+//Returns object values in an array
+
+
+//function convertToArray(obj): 
+  //var array
+  //for each key in obj :
+    //pushes value of key into array
+  //return array
+
+var convertToArray = function (obj) {
+  var objArray = [];
+  for(key in obj) {
+    var value = obj[key];
+    objArray.push(value)
+  }
+  return objArray;
+}
 
 /* #objectSize
  *
@@ -84,7 +151,27 @@ var convertToArray;
  * @param {Object}
  * @return {Number}
  */
-var objectSize;
+
+ //It should take in an object as a parameter
+ //It should total the number of key value pairs
+ //It should return sum of key value pairs
+
+//function objectSize()
+  //key value variable
+  //for(key in object)
+    //evaluates if there is a key value pair
+    //increments key value
+//returns key value variable
+
+var objectSize = function(object) {
+  var numKeyValuePairs = 0;
+  for(key in object) {
+    if(key !== undefined && object[key] !== undefined) {
+      numKeyValuePairs++;
+    }
+  }
+  return numKeyValuePairs;
+};
 
 /* #createZeroFilledArray
  *
@@ -93,7 +180,24 @@ var objectSize;
  * @param {Number}
  * @return {Zero}
  */
-var createZeroFilledArray;
+
+//function should accept a number
+//it should have an array to store zeroes
+//it should take number and fill array with corresponding zeroes
+
+//function()
+  //array storage variable
+  //for loop with length set to number
+    //push zero into array each iteration
+  //return array storage variable
+
+var createZeroFilledArray = function(number) {
+  var arrayZeroStorage = [];
+  for(i = 0; i < number; i++) {
+    arrayZeroStorage.push(0);
+  }
+  return arrayZeroStorage;
+};
 
 /* #poppedArray
  *
@@ -183,6 +287,8 @@ var countObjects;
  * @param {Object}
  * @return {Array}
  */
+//How to tell if something is an object
+
 var getObjectKeys;
 
 /* #getObjectValues
@@ -349,6 +455,7 @@ var stringToKeys;
  */
 var charCountMap;
 
+
 /* #frequencyMap
  *
  * takes in an array of strings and returns an object with the string as the key and the number of occurences as the value.
@@ -370,14 +477,14 @@ var tupleConvertToObject;
 
 
 module.exports = {
-  doubleArray: null,
-  sumArrays: null, 
+  doubleArray: doubleArray,
+  sumArrays: sumArrays, 
   stringCount: null,
   arrayLength: null,
   countAll: null,
-  countStrings: null,
+  countStrings: countStrings,
   countAllStrings: null,
-  convertToArray: null,
+  convertToArray: convertToArray,
   objectSize: null,
   createZeroFilledArray: null,
   poppedArray: null,
