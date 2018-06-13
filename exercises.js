@@ -206,7 +206,19 @@ var createZeroFilledArray = function(number) {
  * @param {Array}
  * @return {Array}
  */
-var poppedArray;
+
+//function should accept an array of numbers
+//function should return an array of everything but last element of array
+
+//function(array)
+  //slices all but last number of array and returns in new array
+  //return new sliced array
+
+var poppedArray = function(array) {
+  var slicedArray = array.slice(0, array.length-1);
+  return slicedArray;
+};
+
 
 /* #splitString
  *
@@ -215,6 +227,14 @@ var poppedArray;
  * @param {String}
  * @return {Array}
  */
+
+//it should accept a string
+//it should create an array
+//it should put each character of string in array
+
+//function(str)
+  //
+
 var splitString;
 
 /* #lengthOfLast
@@ -485,9 +505,9 @@ module.exports = {
   countStrings: countStrings,
   countAllStrings: null,
   convertToArray: convertToArray,
-  objectSize: null,
-  createZeroFilledArray: null,
-  poppedArray: null,
+  objectSize: objectSize,
+  createZeroFilledArray: createZeroFilledArray,
+  poppedArray: poppedArray,
   splitString: null,
   lengthOfLast: null,
   sumBelowTen: null,
